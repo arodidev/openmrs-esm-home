@@ -5,6 +5,7 @@ import { esmHomeSchema } from './openmrs-esm-home-schema';
 import rootComponent from './root.component';
 import homeNavMenuComponent from './side-menu/side-menu.component';
 import homeWidgetDashboardComponent from './home-page-widgets/home-page-widgets.component';
+import HomeHeader from './homepage-header/home-page-header-slot';
 
 const moduleName = '@openmrs/esm-home-app';
 const pageName = 'home';
@@ -23,6 +24,8 @@ export const homeNavMenu = getSyncLifecycle(homeNavMenuComponent, options);
 export const homeWidgetDbLink = getSyncLifecycle(createDashboardLink(dashboardMeta), options);
 
 export const homeWidgetDashboard = getSyncLifecycle(homeWidgetDashboardComponent, options);
+
+export const homepageHeaderExtension = getSyncLifecycle(HomeHeader, options);
 
 export function startupApp() {
   defineConfigSchema(moduleName, esmHomeSchema);
